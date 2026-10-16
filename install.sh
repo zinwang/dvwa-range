@@ -17,3 +17,4 @@ sudo apt-get install /tmp/docker-compose_2.26.1-4_amd64.deb
 wget https://github.com/digininja/DVWA/archive/refs/heads/master.zip -O dvwa/master.zip
 unzip dvwa/master.zip -d dvwa
 mv dvwa/DVWA-master dvwa/dvwa
+rm dvwa/master.zip
