@@ -2,8 +2,12 @@
 
 
 ## Environment Set Up
+1. Run `install.sh`
+```
+./install.sh
+```
 
-
+2. Restart or logout your kali
 
 ## Usage
 
