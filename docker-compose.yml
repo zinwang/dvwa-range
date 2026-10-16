@@ -1,0 +1,32 @@
+networks:
+  lan0:
+    ipam:
+      config:
+        - subnet: 172.31.0.0/24
+
+
+services:
+  dvwa:
+    build: ./dvwa
+    restart: always
+    ports:
+      - "10000:80"
+    depends_on:
+      - db
+    networks:
+      lan0:
+        ipv4_address: 172.31.0.2
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=banana
+      - MYSQL_DATABASE=dvwa
+      - MYSQL_USER=dvwa
+      - MYSQL_PASSWORD=p@ssw0rd
+    networks:
+      lan0:
+        ipv4_address: 172.31.0.3
+
+
